@@ -434,6 +434,9 @@ Blockly.propc.control_repeat_for_loop = function () {
 };
 
 Blockly.Blocks.controls_return = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_CONTROL_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_CONTROLS_RETURN_TOOLTIP);
@@ -451,6 +454,10 @@ Blockly.propc.controls_return = function () {
 };
 
 Blockly.Blocks.controls_break = {
+    // Not permitted in an S3 project
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_CONTROL_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_CONTROLS_BREAK_TOOLTIP);

@@ -76,6 +76,10 @@ Blockly.propc.scribbler_limited_loop = function () {
 
 
 Blockly.Blocks.scribbler_exit_loop = {
+    // Permitted in Scribbler Robot project only
+    boardTypes: {
+        "Enable": [ProjectProfiles.s3]
+    },
     init: function () {
         this.appendDummyInput()
                 .appendField("exit loop");
@@ -91,6 +95,9 @@ Blockly.propc.scribbler_exit_loop = function () {
 };
 
 Blockly.Blocks.scribbler_simple_wait = {
+    boardTypes: {
+        "Include": [ProjectProfiles.s3]
+    },
     init: function () {
         if (this.type === 'scribbler_simple_wait') {
             this.appendDummyInput()

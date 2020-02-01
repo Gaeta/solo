@@ -200,6 +200,9 @@ Blockly.propc.math_number = function () {
 };
 
 Blockly.Blocks.math_arithmetic = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     init: function () {
         if (profile.default.description === "Scribbler Robot") {
             this.setHelpUrl(Blockly.MSG_S3_MATH_HELPURL);
@@ -380,6 +383,9 @@ Blockly.propc.math_arithmetic = function () {
 };
 
 Blockly.Blocks.math_limit = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_NUMBERS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_MATH_LIMIT_TOOLTIP);
@@ -408,6 +414,9 @@ Blockly.propc.math_limit = function () {
 };
 
 Blockly.Blocks.math_crement = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     // Increment/decrement
     init: function () {
         if (profile.default.description === "Scribbler Robot") {
@@ -435,6 +444,9 @@ Blockly.propc.math_crement = function () {
 };
 
 Blockly.Blocks.math_random = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     init: function () {
         if (profile.default.description === "Scribbler Robot") {
             this.setHelpUrl(Blockly.MSG_S3_MATH_HELPURL);
@@ -464,6 +476,9 @@ Blockly.propc.math_random = function () {
 };
 
 Blockly.Blocks.math_bitwise = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_NUMBERS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_MATH_BITWISE_TOOLTIP);
@@ -495,6 +510,9 @@ Blockly.propc.math_bitwise = function () {
 };
 
 Blockly.Blocks.base_delay = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_CONTROL_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_BASE_DELAY_TOOLTIP);
@@ -1323,6 +1341,9 @@ Blockly.propc.logic_compare = function () {
 };
 
 Blockly.Blocks.logic_operation = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     // Logical operations: 'and', 'or'.
     category: Blockly.LANG_CATEGORY_LOGIC,
     init: function () {
@@ -1441,6 +1462,9 @@ Blockly.propc.logic_boolean = function () {
 };
 
 Blockly.Blocks.cog_new = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_CONTROL_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_COG_NEW_TOOLTIP);
@@ -2024,6 +2048,9 @@ Blockly.propc.number_hex = function () {
 };
 
 Blockly.Blocks.constrain_value = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_NUMBERS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_CONSTRAIN_VALUE_TOOLTIP);
@@ -2052,6 +2079,9 @@ Blockly.propc.constrain_value = function () {
 };
 
 Blockly.Blocks.map_value = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_NUMBERS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_MAP_VALUE_TOOLTIP);
@@ -2085,6 +2115,9 @@ Blockly.propc.map_value = function () {
 };
 
 Blockly.Blocks.math_advanced = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_NUMBERS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_MATH_ADVANCED_TOOLTIP);
@@ -2127,6 +2160,9 @@ Blockly.propc.math_advanced = function () {
 };
 
 Blockly.Blocks.math_inv_trig = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_NUMBERS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_MATH_INV_TRIG_TOOLTIP);
