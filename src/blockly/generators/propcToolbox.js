@@ -31,7 +31,7 @@
  *
  * Block definitions may contain the 'experimental=true' attribute. This designates
  * the menu item as 'not ready for production' and will be excluded from systems that
- * are configured to disbale experimental code. See the configuration option 'experimental'
+ * are configured to disable experimental code. See the configuration option 'experimental'
  * for additional details.
  *
  * Note that the code below currently detects that the attribute
@@ -97,6 +97,7 @@ xmlToolbox += '        </block>';
 xmlToolbox += '        <block type="cog_new" exclude="s3,"></block>';
 xmlToolbox += '        <block type="controls_return" exclude="s3,"></block>';
 xmlToolbox += '    </category>';
+
 xmlToolbox += '    <category key="category_operators" exclude="s3," colour="275">';
 xmlToolbox += '        <category key="category_operators_numbers" >';
 xmlToolbox += '            <block type="math_arithmetic"></block>';
@@ -130,6 +131,7 @@ xmlToolbox += '                    </block>';
 xmlToolbox += '                </value>';
 xmlToolbox += '            </block>';
 xmlToolbox += '        </category>';
+
 xmlToolbox += '        <category key="category_operators_strings" >';
 xmlToolbox += '            <block type="string_var_length"></block>';
 xmlToolbox += '            <block type="string_compare"></block>';
@@ -179,7 +181,9 @@ xmlToolbox += '            <block type="string_sprint_multiple"></block>';
 xmlToolbox += '            <block type="string_scan_multiple"></block>';
 xmlToolbox += '        </category>';
 xmlToolbox += '    </category>';
+
 xmlToolbox += '    <sep></sep>';
+
 xmlToolbox += '    <category key="category_values" exclude="s3," colour="205">';
 xmlToolbox += '        <block type="math_number"></block>';
 xmlToolbox += '        <block type="string_type_block"></block>';
@@ -227,6 +231,7 @@ xmlToolbox += '        </block>';
 xmlToolbox += '        <block type="heb_color_val" include="heb,"></block>';
 xmlToolbox += '        <block type="system_counter" exclude="other,"></block>';
 xmlToolbox += '    </category>';
+
 xmlToolbox += '    <category key="category_operators_arrays" colour="250">';
 xmlToolbox += '        <block type="array_init"></block>';
 xmlToolbox += '        <block type="array_fill"></block>';
@@ -251,8 +256,11 @@ xmlToolbox += '            </value>';
 xmlToolbox += '        </block>';
 xmlToolbox += '        <block type="array_clear"></block>';
 xmlToolbox += '    </category>';
+
 xmlToolbox += '    <category key="category_variables" custom="VARIABLE" colour="250"></category>';
+
 xmlToolbox += '    <category key="category_functions" custom="PROCEDURE" colour="225"></category>';
+
 xmlToolbox += '    <category key="category_input-output_pin-states" exclude="s3,heb,heb-wx," colour="185">';
 xmlToolbox += '        <block type="make_pin"></block>';
 xmlToolbox += '        <block type="make_pin_input">';
@@ -278,8 +286,13 @@ xmlToolbox += '                <block type="number_binary"></block>';
 xmlToolbox += '            </value>';
 xmlToolbox += '        </block>';
 xmlToolbox += '    </category>';
+
 xmlToolbox += '    <sep include="heb,heb-wx,"></sep>';
+
+
+// working here (jde)
 xmlToolbox += '    <category key="category_communicate" exclude="s3," colour="340">';
+
 xmlToolbox += '        <category key="category_hackable-electronic-badge_oled" include="heb,heb-wx,">';
 xmlToolbox += '            <block type="heb_print_numeric_var">';
 xmlToolbox += '                <value name="VALUE">';
@@ -417,6 +430,7 @@ xmlToolbox += '                    </block>';
 xmlToolbox += '                </value>';
 xmlToolbox += '            </block>';
 xmlToolbox += '        </category>';
+
 xmlToolbox += '        <category key="category_hackable-electronic-badge_ir-communication" include="heb,heb-wx,">';
 xmlToolbox += '            <block type="heb_ir_send_signal">';
 xmlToolbox += '                <value name="MESSAGE">';
@@ -428,12 +442,14 @@ xmlToolbox += '            </block>';
 xmlToolbox += '            <block type="heb_ir_read_signal"></block>';
 xmlToolbox += '            <block type="heb_ir_clear_buffer"></block>';
 xmlToolbox += '        </category>';
+
 xmlToolbox += '        <category key="category_communicate_graphing" exclude="heb-wx,">';
 xmlToolbox += '            <block type="graph_settings">';
 xmlToolbox += '                <field name="XAXIS">40,S</field>';
 xmlToolbox += '            </block>';
 xmlToolbox += '            <block type="graph_output"></block>';
 xmlToolbox += '        </category>';
+
 xmlToolbox += '        <category key="category_hackable-electronic-badge_led_control" include="heb,heb-wx,">';
 xmlToolbox += '            <block type="ws2812b_init" include="heb-wx,"></block>';
 xmlToolbox += '            <block type="ws2812b_set" include="heb-wx,">';
@@ -475,6 +491,8 @@ xmlToolbox += '                        <field name="VALUE">1</field>';
 xmlToolbox += '                    </block>';
 xmlToolbox += '                </value>';
 xmlToolbox += '            </block>';
+
+// working here (jde)
 xmlToolbox += '            <block type="heb_pwm_led" include="heb-wx,">';
 xmlToolbox += '                <value name="BRIGHTNESS">';
 xmlToolbox += '                    <block type="math_number">';
@@ -1781,7 +1799,7 @@ function filterToolbox(profileName) {
             // from the block under consideration
             var exclude = toolboxEntry.getAttribute('exclude');
 
-            // The experimental attribute is used to decalre that the current menu item
+            // The experimental attribute is used to declare that the current menu item
             // is considered experimental
             var experimental = toolboxEntry.getAttribute('experimental');
 

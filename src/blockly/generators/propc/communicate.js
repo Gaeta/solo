@@ -4225,6 +4225,9 @@ Blockly.propc.epaper_bitmap =  Blockly.propc.oled_bitmap;
 
 // -------------- RGB LEDs (WS2812B module) blocks -----------------------------
 Blockly.Blocks.ws2812b_init = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     init: function () {
         var myTooltip = Blockly.MSG_WS2812B_INIT_TOOLTIP;
         var myHelpUrl = Blockly.MSG_WS2812B_HELPURL;
@@ -4307,6 +4310,13 @@ Blockly.propc.ws2812b_init = function () {
 };
 
 Blockly.Blocks.ws2812b_set = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         var myHelpUrl = Blockly.MSG_WS2812B_HELPURL;
         if (projectData && projectData['board'] === 'heb-wx') {
@@ -4463,6 +4473,13 @@ Blockly.propc.ws2812b_set = function () {
 };
 
 Blockly.Blocks.ws2812b_set_multiple = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         var myHelpUrl = Blockly.MSG_WS2812B_HELPURL;
         if (projectData && projectData['board'] === 'heb-wx') {
@@ -4525,6 +4542,13 @@ Blockly.propc.ws2812b_set_multiple = function () {
 };
 
 Blockly.Blocks.ws2812b_update = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         var myHelpUrl = Blockly.MSG_WS2812B_HELPURL;
         if (projectData && projectData['board'] === 'heb-wx') {
@@ -5955,6 +5979,12 @@ Blockly.propc.wx_ip = function () {
 
 // ---------------- Graphing Output Blocks -------------------------------------
 Blockly.Blocks.graph_output = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.hebwx
+        ]
+    },
     helpUrl: Blockly.MSG_GRAPHING_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_GRAPH_OUTPUT_TOOLTIP);
@@ -6175,6 +6205,12 @@ Blockly.propc.graph_output = function () {
 };
 
 Blockly.Blocks.graph_settings = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.hebwx
+        ]
+    },
     helpUrl: Blockly.MSG_GRAPHING_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_GRAPH_SETTINGS_TOOLTIP);

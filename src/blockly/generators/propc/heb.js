@@ -31,6 +31,13 @@ if (!Blockly.Blocks)
 
 
 Blockly.Blocks.heb_wx_lock = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_WX_LOCK);
         this.setTooltip(Blockly.MSG_HEB_WX_LOCK_TOOLTIP);
@@ -60,6 +67,13 @@ Blockly.propc.heb_wx_lock = function () {
 };  
 
 Blockly.Blocks.heb_toggle_led = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_LEDS_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_TOGGLE_LED_TOOLTIP);
@@ -84,6 +98,13 @@ Blockly.propc.heb_toggle_led = function () {
 };
 
 Blockly.Blocks.heb_pwm_led = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_LEDS_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_PWM_LED_TOOLTIP);
@@ -109,6 +130,13 @@ Blockly.propc.heb_pwm_led = function () {
 };
 
 Blockly.Blocks.heb_toggle_led_open = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_LEDS_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_TOGGLE_LED_OPEN_TOOLTIP);
@@ -719,6 +747,13 @@ Blockly.propc.heb_rotate = function () {
 };
 
 Blockly.Blocks.heb_ir_send_signal = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_IR_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_IR_SEND_SIGNAL_TOOLTIP);
@@ -740,6 +775,13 @@ Blockly.propc.heb_ir_send_signal = function () {
 };
 
 Blockly.Blocks.heb_ir_read_signal = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_IR_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_IR_READ_SIGNAL_TOOLTIP);
@@ -767,6 +809,13 @@ Blockly.propc.heb_ir_read_signal = function () {
 };
 
 Blockly.Blocks.heb_ir_clear_buffer = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_IR_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_IR_CLEAR_BUFFER_TOOLTIP);
@@ -785,6 +834,13 @@ Blockly.propc.heb_ir_clear_buffer = function () {
 };
 
 Blockly.Blocks.heb_badge_eeprom_store = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_EEPROM_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_BADGE_EEPROM_STORE_TOOLTIP);
@@ -804,6 +860,13 @@ Blockly.propc.heb_badge_eeprom_store = function () {
 };
 
 Blockly.Blocks.heb_badge_eeprom_is_stored = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_EEPROM_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_BADGE_EEPROM_IS_STORED_TOOLTIP);
@@ -827,6 +890,13 @@ Blockly.propc.heb_badge_eeprom_is_stored = function () {
 };
 
 Blockly.Blocks.heb_badge_eeprom_retrieve = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_EEPROM_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_BADGE_EEPROM_RETRIEVE_TOOLTIP);
@@ -853,6 +923,13 @@ Blockly.propc.heb_badge_eeprom_retrieve = function () {
 };
 
 Blockly.Blocks.heb_count_contacts = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_EEPROM_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_COUNT_CONTACTS_TOOLTIP);
@@ -870,6 +947,13 @@ Blockly.propc.heb_count_contacts = function () {
 };
 
 Blockly.Blocks.heb_erase_all_contacts = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_EEPROM_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_ERASE_ALL_CONTACTS_TOOLTIP);
@@ -886,6 +970,13 @@ Blockly.propc.heb_erase_all_contacts = function () {
 };
 
 Blockly.Blocks.heb_badge_axis_acceleration = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_ACCEL_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_BADGE_AXIS_ACCELERATION_TOOLTIP);
@@ -904,6 +995,13 @@ Blockly.propc.heb_badge_axis_acceleration = function () {
 };
 
 Blockly.Blocks.heb_badge_was_shaken = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_ACCEL_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_BADGE_WAS_SHAKEN_TOOLTIP);
@@ -921,6 +1019,13 @@ Blockly.propc.heb_badge_was_shaken = function () {
 };
 
 Blockly.Blocks.heb_touchpad_status = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setTooltip(Blockly.MSG_HEB_TOUCHPAD_STATUS_TOOLTIP);
         this.setHelpUrl(Blockly.MSG_BADGE_BUTTONS_HELPURL);
@@ -965,6 +1070,13 @@ Blockly.propc.heb_touchpad_status = function () {
 };
 
 Blockly.Blocks.heb_touchpad_sensitivity = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_BUTTONS_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_TOUCHPAD_SENSITIVITY_TOOLTIP);
@@ -992,6 +1104,13 @@ Blockly.propc.heb_touchpad_sensitivity = function () {
 };
 
 Blockly.Blocks.heb_text_to_speech_say = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_AUDIO_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_TEXT_TO_SPEECH_SAY_TOOLTIP);
@@ -1026,6 +1145,13 @@ Blockly.propc.heb_text_to_speech_say = function () {
 };
 
 Blockly.Blocks.heb_text_to_speech_spell = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_AUDIO_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_TEXT_TO_SPEECH_SPELL_TOOLTIP);
@@ -1060,6 +1186,13 @@ Blockly.propc.heb_text_to_speech_spell = function () {
 };
 
 Blockly.Blocks.heb_text_to_speech_pins = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     helpUrl: Blockly.MSG_AUDIO_HELPURL,
     init: function () {
         var pins = (profile.default.earphone_jack_inverted || '0,1').split(',')
@@ -1085,6 +1218,13 @@ Blockly.propc.heb_text_to_speech_pins = function () {
 };
 
 Blockly.Blocks.heb_text_to_speech_volume = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     helpUrl: Blockly.MSG_AUDIO_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_HEB_TEXT_TO_SPEECH_VOLUME_TOOLTIP);
