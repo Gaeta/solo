@@ -35,6 +35,13 @@ if (!Blockly.Blocks)
     Blockly.Blocks = {};
 
 Blockly.Blocks.make_pin = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         if (profile.default.description === "Scribbler Robot") {
             this.setHelpUrl(Blockly.MSG_S3_IO_HELPURL);
@@ -70,6 +77,13 @@ Blockly.propc.make_pin = function () {
 };
 
 Blockly.Blocks.make_pin_input = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     helpUrl: Blockly.MSG_PINS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_MAKE_PIN_INPUT_TOOLTIP);
@@ -104,6 +118,13 @@ Blockly.propc.make_pin_input = function () {
 };
 
 Blockly.Blocks.check_pin = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         if (profile.default.description === "Scribbler Robot") {
             this.setHelpUrl(Blockly.MSG_S3_IO_HELPURL);
@@ -127,6 +148,13 @@ Blockly.propc.check_pin = function () {
 };
 
 Blockly.Blocks.check_pin_input = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     helpUrl: Blockly.MSG_PINS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_CHECK_PIN_INPUT_TOOLTIP);
@@ -148,6 +176,13 @@ Blockly.propc.check_pin_input = function () {
 };
 
 Blockly.Blocks.set_pins = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     helpUrl: Blockly.MSG_PINS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_SET_PINS_TOOLTIP);
@@ -265,6 +300,13 @@ Blockly.propc.set_pins = function () {
 };
 
 Blockly.Blocks.get_pins = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     helpUrl: Blockly.MSG_PINS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_GET_PINS_TOOLTIP);
@@ -309,6 +351,13 @@ Blockly.propc.get_pins = function () {
 };
 
 Blockly.Blocks.set_pins_binary = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     helpUrl: Blockly.MSG_PINS_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_SET_PINS_BINARY_TOOLTIP);

@@ -191,6 +191,13 @@ Blockly.propc.heb_set_led_rgb = function () {
 };
 
 Blockly.Blocks.heb_print_numeric_var = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_PRINT_NUMERIC_VAR_TOOLTIP);
@@ -215,6 +222,13 @@ Blockly.propc.heb_print_numeric_var = function () {
 };
 
 Blockly.Blocks.heb_print_string_var = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_PRINT_STRING_VAR_TOOLTIP);
@@ -237,7 +251,25 @@ Blockly.Blocks.heb_print_multiple = Blockly.Blocks.oled_print_multiple;
 
 Blockly.propc.heb_print_multiple = Blockly.propc.console_print_multiple;
 
+
+/**
+ *
+ * @type {{
+ *  init: Blockly.Blocks.heb_cursor_position_large.init,
+ *  boardTypes: {
+ *      Exclude: [Object.s3],
+ *      Include: [Object.heb, Object.hebwx]
+ *      }
+ *  }}
+ */
 Blockly.Blocks.heb_cursor_position_large = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_SET_FONT_TOOLTIP);
@@ -252,7 +284,10 @@ Blockly.Blocks.heb_cursor_position_large = {
 };
 
 
-
+/**
+ *
+ * @return {string}
+ */
 Blockly.propc.heb_cursor_position_large = function () {
     var size = this.getFieldValue("SIZE");
 
@@ -260,7 +295,19 @@ Blockly.propc.heb_cursor_position_large = function () {
     return code;
 };
 
+
+/**
+ *
+ * @type {{init: Blockly.Blocks.heb_cursor_position_small.init}}
+ */
 Blockly.Blocks.heb_cursor_position_small = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_CURSOR_POSITION_TOOLTIP);
@@ -286,6 +333,13 @@ Blockly.propc.heb_cursor_position_small = function () {
 };
 
 Blockly.Blocks.heb_oled_point = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_OLED_POINT_TOOLTIP);
@@ -321,7 +375,22 @@ Blockly.propc.heb_oled_point = function () {
     return code;
 };
 
+
+/**
+ *
+ * @type {{
+ *  init: Blockly.Blocks.heb_oled_line.init,
+ *  boardTypes: {Exclude: [Object.s3], Include: [Object.heb, Object.hebwx]}
+ *  }}
+ */
 Blockly.Blocks.heb_oled_line = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_OLED_LINE_TOOLTIP);
@@ -369,7 +438,22 @@ Blockly.propc.heb_oled_line = function () {
     return code;
 };
 
+
+/**
+ *
+ * @type {{
+ *  init: Blockly.Blocks.heb_oled_circle.init,
+ *  boardTypes: {Exclude: [Object.s3], Include: [Object.heb, Object.hebwx]}
+ *  }}
+ */
 Blockly.Blocks.heb_oled_circle = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_OLED_CIRCLE_TOOLTIP);
@@ -421,7 +505,22 @@ Blockly.propc.heb_oled_circle = function () {
     return code;
 };
 
+
+/**
+ *
+ * @type {{
+ *  init: Blockly.Blocks.heb_oled_box.init,
+ *  boardTypes: {Exclude: [Object.s3], Include: [Object.heb, Object.hebwx]}
+ *  }}
+ */
 Blockly.Blocks.heb_oled_box = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_OLED_BOX_TOOLTIP);
@@ -479,7 +578,22 @@ Blockly.propc.heb_oled_box = function () {
     return code;
 };
 
+
+/**
+ *
+ * @type {{
+ *  init: Blockly.Blocks.heb_oled_triangle.init,
+ *  boardTypes: {Exclude: [Object.s3], Include: [Object.heb, Object.hebwx]}
+ *  }}
+ */
 Blockly.Blocks.heb_oled_triangle = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_OLED_TRIANGLE_TOOLTIP);
@@ -547,7 +661,22 @@ Blockly.propc.heb_oled_triangle = function () {
     return code;
 };
 
+
+/**
+ *
+ * @type {{
+ *  init: Blockly.Blocks.heb_clear_screen.init,
+ *  boardTypes: {Exclude: [Object.s3], Include: [Object.heb, Object.hebwx]}
+ *  }}
+ */
 Blockly.Blocks.heb_clear_screen = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_CLEAR_SCREEN_TOOLTIP);
@@ -565,6 +694,13 @@ Blockly.propc.heb_clear_screen = function () {
 };
 
 Blockly.Blocks.heb_rotate = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_BADGE_DISPLAY_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_ROTATE_TOOLTIP);

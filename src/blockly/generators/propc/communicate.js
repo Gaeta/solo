@@ -4085,6 +4085,13 @@ Blockly.Blocks.epaper_print_number = Blockly.Blocks.oled_print_number;
 Blockly.propc.epaper_print_number =  Blockly.propc.oled_print_number;
 
 Blockly.Blocks.oled_print_multiple = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [
+            ProjectProfiles.heb,
+            ProjectProfiles.hebwx
+        ]
+    },
     init: function () {
         var myTooltip = Blockly.MSG_OLED_PRINT_MULTIPLE_TOOLTIP;
         var myHelpUrl = Blockly.MSG_OLED_HELPURL;
