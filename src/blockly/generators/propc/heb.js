@@ -135,6 +135,10 @@ Blockly.propc.heb_toggle_led_open = function () {
 };
 
 Blockly.Blocks.heb_color_val = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3],
+        "Include": [ProjectProfiles.heb]
+    },
     init: function () {
         this.setHelpUrl(Blockly.MSG_VALUES_HELPURL);
         this.setTooltip(Blockly.MSG_HEB_COLOR_VAL_TOOLTIP);

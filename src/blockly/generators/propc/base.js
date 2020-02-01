@@ -552,6 +552,9 @@ Blockly.propc.base_delay = function () {
 };
 
 Blockly.Blocks.string_type_block = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_STRING_TYPE_BLOCK_TOOLTIP);
@@ -574,6 +577,9 @@ Blockly.propc.string_type_block = function () {
 };
 
 Blockly.Blocks.char_type_block = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_CHAR_TYPE_BLOCK_TOOLTIP);
@@ -604,6 +610,9 @@ Blockly.propc.char_type_block = function () {
 
 
 Blockly.Blocks.music_note = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_MUSIC_NOTE_BLOCK_TOOLTIP);
@@ -649,6 +658,9 @@ Blockly.propc.music_note = function () {
 
 
 Blockly.Blocks.system_counter = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     init: function () {
         this.setTooltip(Blockly.MSG_SYSTEM_COUNTER_TOOLTIP);
         if (profile.default.description === "Other Propeller Boards") {
@@ -1080,6 +1092,9 @@ Blockly.propc.string_length = function () {
 };
 
 Blockly.Blocks.high_low_value = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_HIGH_LOW_VALUE_TOOLTIP);
@@ -1183,6 +1198,12 @@ Blockly.propc.comment = function () {
 
 /* Color Picker block */
 Blockly.Blocks.color_picker = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb
+        ]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_COLOR_PICKER_TOOLTIP);
@@ -1207,6 +1228,12 @@ Blockly.propc.color_picker = function () {
 };
 
 Blockly.Blocks.color_value_from = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb
+        ]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_COLOR_VALUE_FROM_TOOLTIP);
@@ -1247,6 +1274,13 @@ Blockly.propc.color_value_from = function () {
 
 
 Blockly.Blocks.get_channel_from = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb
+        ]
+    },
+
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_GET_CHANNEL_FROM_TOOLTIP);
@@ -1276,6 +1310,13 @@ Blockly.propc.get_channel_from = function () {
 };
 
 Blockly.Blocks.compare_colors = {
+    boardTypes: {
+        "Exclude": [
+            ProjectProfiles.s3,
+            ProjectProfiles.heb
+        ]
+    },
+
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_COMPARE_COLORS_TOOLTIP);
@@ -1442,6 +1483,9 @@ Blockly.propc.logic_negate = function () {
 };
 
 Blockly.Blocks.logic_boolean = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     // Boolean data type: true and false.
     //category: Blockly.LANG_CATEGORY_LOGIC,
     helpUrl: Blockly.MSG_VALUES_HELPURL,
@@ -1994,6 +2038,9 @@ Blockly.propc.string_trim = function () {
 
 
 Blockly.Blocks.number_binary = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_NUMBER_BINARY_TOOLTIP);
@@ -2021,6 +2068,9 @@ Blockly.propc.number_binary = function () {
 };
 
 Blockly.Blocks.number_hex = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_NUMBER_HEX_TOOLTIP);
@@ -2207,6 +2257,9 @@ Blockly.propc.math_inv_trig = function () {
 };
 
 Blockly.Blocks.constant_define = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.setTooltip(Blockly.MSG_CONSTANT_DEF_TOOLTIP);
@@ -2284,6 +2337,9 @@ Blockly.propc.constant_define = function () {
 };
 
 Blockly.Blocks.constant_value = {
+    boardTypes: {
+        "Exclude": [ProjectProfiles.s3]
+    },
     helpUrl: Blockly.MSG_VALUES_HELPURL,
     init: function () {
         this.userDefinedConstantsList_ = [];
