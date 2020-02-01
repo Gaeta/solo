@@ -1325,10 +1325,6 @@ function uploadHandler(files) {
         var xmlValid = false;
         var uploadBoardType = '';
 
-        // TODO: Solo #261
-        // Loop through blocks to verify blocks are supported for the project board type
-        // validateProjectBlockList(this.result);
-
         // Flag to indicate that we are importing a file that
         // was exported from the blockly.parallax.com site
         var isSvgeFile = false;
@@ -1390,8 +1386,12 @@ function uploadHandler(files) {
             var projectCreated = getProjectCreatedDateFromXML(xmlString, tt);
             var projectModified = getProjectModifiedDateFromXML(xmlString, tt);
 
+            // TODO: Solo #261
+            // Loop through blocks to verify blocks are supported for the project board type
+            validateProjectBlockList(uploadBoardType, this.result);
 
-                var pd = {
+
+            var pd = {
                     'board': uploadBoardType,
                     'code': uploadedXML,
                     'created': projectCreated,
@@ -1971,19 +1971,23 @@ function RenderPageBrandingElements() {
 /**
  * Validates the blocks in the project
  *
- * @param fileContent string
+ * @param {string} profile
+ * @param {string} fileContent
+ *
  * @return array of block names
  */
-function validateProjectBlockList(fileContent) {
+function validateProjectBlockList(profile, fileContent) {
     // Loop through blocks to verify blocks are supported for the project board type
     const parser = new DOMParser();
     let xmlDoc = parser.parseFromString(fileContent,"image/svg+xml");
     let blockNodes = xmlDoc.getElementsByTagName("block");
 
     if (blockNodes.length > 0) {
+        let validator = new ProjectBlockValidator(profile);
         let blockList = enumerateProjectBlockNames(blockNodes);
+
         for (const property in blockList) {
-            if (! evaluateProjectBlockBoardType(blockList[property])) {
+            if (! validator.evaluateProjectBlockBoardType((blockList[property]))) {
                 console.log("Block '" + blockList[property] + "' is incompatible with this project.");
             }
         }
@@ -2012,14 +2016,49 @@ function enumerateProjectBlockNames(nodes) {
     return blockList;
 }
 
-/**
- *
- * @param blockName
- * @return {boolean}
- */
-function evaluateProjectBlockBoardType(blockName) {
-    if (blockName === "comments") {
-        return false;
+
+
+
+class ProjectBlockValidator {
+
+
+    /**
+     *
+     * @param {string} profile
+     */
+    constructor(profile) {
+        this.profile = profile;
     }
-    return true;
+
+    /**
+     *
+     * @param {string} blockName
+     * @return {boolean}
+     */
+    evaluateProjectBlockBoardType(blockName) {
+        let block = Blockly.Blocks[blockName];
+
+        // Does the block definition exist
+        if ( block === undefined) {
+            return false;
+        }
+
+        // Does the block have any board type restrictions
+        if (block.boardTypes === undefined) {
+            return true;
+        }
+
+        // Evaluate board type restrictions
+        if (block.boardTypes.Exclude !== undefined ) {
+            // Evaluate the exclusions
+            for (const item in block.boardTypes.Exclude) {
+                if (block.boardTypes.Exclude[item].name === blockName) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
 }
