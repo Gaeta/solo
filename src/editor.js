@@ -1388,7 +1388,11 @@ function uploadHandler(files) {
 
             // TODO: Solo #261
             // Loop through blocks to verify blocks are supported for the project board type
-            validateProjectBlockList(uploadBoardType, this.result);
+            let validator = new ProjectBlockValidator(uploadBoardType, this.result);
+            let results = validator.validateProjectBlockList();
+            if (results.length > 0) {
+                console.log("Project contains " + results.length + " invalid blocks.");
+            }
 
 
             var pd = {
@@ -1968,72 +1972,66 @@ function RenderPageBrandingElements() {
 }
 
 
-/**
- * Validates the blocks in the project
- *
- * @param {string} profile
- * @param {string} fileContent
- *
- * @return array of block names
- */
-function validateProjectBlockList(profile, fileContent) {
-    // Loop through blocks to verify blocks are supported for the project board type
-    const parser = new DOMParser();
-    let xmlDoc = parser.parseFromString(fileContent,"image/svg+xml");
-    let blockNodes = xmlDoc.getElementsByTagName("block");
-
-    if (blockNodes.length > 0) {
-        let validator = new ProjectBlockValidator(profile);
-        let blockList = enumerateProjectBlockNames(blockNodes);
-
-        for (const property in blockList) {
-            if (! validator.evaluateProjectBlockBoardType((blockList[property]))) {
-                console.log("Block '" + blockList[property] + "' is incompatible with this project.");
-            }
-        }
-    }
-}
 
 
 /**
  *
- * @param nodes
- * @return {[]}
  */
-function enumerateProjectBlockNames(nodes) {
-    let blockList = [];
-
-    // blockNodes contains a list of block element objects and a list of block name objects.
-    // The block element objects are enumerated as an array, starting at 0. This loops through
-    // the block element objects to obtain the individual block names.
-    for (const property in nodes) {
-        if (! isNaN(parseInt(property, 10))) {
-            blockList.push(nodes[property].getAttribute("type"));
-            console.log(`${property}: ${nodes[property].getAttribute("type")}`);
-        }
-    }
-
-    return blockList;
-}
-
-
-
-
 class ProjectBlockValidator {
 
-
     /**
-     *
-     * @param {string} profile
+     * Constructor
+     * @param {string} profile, aka board type
+     * @param {string} file containing the project block definitions.
      */
-    constructor(profile) {
+
+    constructor(profile, file) {
         this.profile = profile;
+        this.file = file;
+        this.badBlocks = [];
     }
+
+    validateProjectBlockList() {
+        // Reset the badBlock list
+        this.badBlocks = [];
+
+        // Convert file contents into an XMLDocument
+        const parser = new DOMParser();
+        let xmlDoc = parser.parseFromString(this.file, "image/svg+xml");
+
+        // Get a collection of project blocks
+        let blockNodes = xmlDoc.getElementsByTagName("block");
+
+        // Return an empty array when there is no work to do.
+        if (blockNodes.length === 0) {
+            return this.badBlocks;
+        }
+
+        // Loop through blocks to verify blocks are supported for the project board type
+        for (let index = 0; index < blockNodes.length; index++) {
+            let x = this.evaluateProjectBlockBoardType(blockNodes[index].getAttribute("type"));
+
+            if (x) {
+                let name = blockNodes[index].getAttribute("type");
+                let id = blockNodes[index].getAttribute("id");
+
+                this.badBlocks.push({
+                    "name": name,
+                    "id": id
+                });
+
+                console.log("Block " + name + " id " + id + "is not permitted.");
+            }
+        }
+
+        return this.badBlocks;
+    }
+
 
     /**
      *
      * @param {string} blockName
-     * @return {boolean}
+     * @return {boolean} true is block is restricted, otherwise false
      */
     evaluateProjectBlockBoardType(blockName) {
         let block = Blockly.Blocks[blockName];
@@ -2045,7 +2043,7 @@ class ProjectBlockValidator {
 
         // Does the block have any board type restrictions
         if (block.boardTypes === undefined) {
-            return true;
+            return false;
         }
 
         // Evaluate board type restrictions
@@ -2053,12 +2051,10 @@ class ProjectBlockValidator {
             // Evaluate the exclusions
             for (const item in block.boardTypes.Exclude) {
                 if (block.boardTypes.Exclude[item].name === blockName) {
-                    return false;
-                }
+                    return true;
+               }
             }
         }
-        return true;
+        return false;
     }
-
-
 }
